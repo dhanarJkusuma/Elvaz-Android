@@ -1,0 +1,171 @@
+[
+  {
+    "Town":" Aceh"
+  ,"latitude":"4,0408635"
+  ,"longitude":"96,648933"
+  },
+  {
+    "Town":" Sumatera Utara"
+  ,"latitude":"1,8312921"
+  ,"longitude":"98,7421852"
+  },
+  {
+    "Town":" Sumatera Barat"
+  ,"latitude":"-1,556351"
+  ,"longitude":"100,24492"
+  },
+  {
+    "Town":" Riau"
+  ,"latitude":"0,8804467"
+  ,"longitude":"101,919073"
+  },
+  {
+    "Town":" Jambi"
+  ,"latitude":"-1,752903"
+  ,"longitude":"102,793018"
+  },
+  {
+    "Town":" Sumatera Selatan"
+  ,"latitude":"-3,2753964"
+  ,"longitude":"104,082144"
+  },
+  {
+    "Town":" Bengkulu"
+  ,"latitude":"-3,8954875"
+  ,"longitude":"102,393025"
+  },
+  {
+    "Town":" Lampung"
+  ,"latitude":"-4,9461904"
+  ,"longitude":"104,892063"
+  },
+  {
+    "Town":" Kep Bangka Bel"
+  ,"latitude":"-2,459293"
+  ,"longitude":"106,9782085"
+  },
+  {
+    "Town":" Kepulauan Riau"
+  ,"latitude":"3,9119636"
+  ,"longitude":"108,1294296"
+  },
+  {
+    "Town":" DKI Jakarta"
+  ,"latitude":"-6,2297465"
+  ,"longitude":"106,829518"
+  },
+  {
+    "Town":" Jawa Barat"
+  ,"latitude":"-6,8678485"
+  ,"longitude":"107,605138"
+  },
+  {
+    "Town":" Jawa Tengah"
+  ,"latitude":"-7,3071521"
+  ,"longitude":"110,1234955"
+  },
+  {
+    "Town":" DI Yogyakarta"
+  ,"latitude":"-7,8730445"
+  ,"longitude":"110,4242874"
+  },
+  {
+    "Town":" Jawa Timur"
+  ,"latitude":"-7,6308544"
+  ,"longitude":"113,5832404"
+  },
+  {
+    "Town":" Banten"
+  ,"latitude":"-6,4460779"
+  ,"longitude":"105,940015"
+  },
+  {
+    "Town":" Bali"
+  ,"latitude":"-8,4560962"
+  ,"longitude":"115,0715437"
+  },
+  {
+    "Town":" NTB"
+  ,"latitude":"-8,5949885"
+  ,"longitude":"117,5781895"
+  },
+  {
+    "Town":" NTT"
+  ,"latitude":"-9,5355325"
+  ,"longitude":"122,0598439"
+  },
+  {
+    "Town":" Kal Barat"
+  ,"latitude":"-0,51386"
+  ,"longitude":"111,1110539"
+  },
+  {
+    "Town":" Kal Tengah"
+  ,"latitude":"-1,3843149"
+  ,"longitude":"113,2904425"
+  },
+  {
+    "Town":" Kal Sel"
+  ,"latitude":"-3,029925"
+  ,"longitude":"115,45091"
+  },
+  {
+    "Town":" Kal Utara"
+  ,"latitude":"2,7257759"
+  ,"longitude":"116,2752384"
+  },
+  {
+    "Town":" Kal Timur"
+  ,"latitude":"0,0985775"
+  ,"longitude":"116,431081"
+  },
+  {
+    "Town":" Sul Utara"
+  ,"latitude":"2,5201579"
+  ,"longitude":"124,4236516"
+  },
+  {
+    "Town":" Sul Tengah"
+  ,"latitude":"-1,1327955"
+  ,"longitude":"121,81473"
+  },
+  {
+    "Town":" Sul Sel"
+  ,"latitude":"-4,8270885"
+  ,"longitude":"119,4393624"
+  },
+  {
+    "Town":" Sulawesi Tenggara"
+  ,"latitude":"-4,495461"
+  ,"longitude":"122,740636"
+  },
+  {
+    "Town":" Gorontalo"
+  ,"latitude":"0,6737435"
+  ,"longitude":"122,3567696"
+  },
+  {
+    "Town":" Sulawesi Barat"
+  ,"latitude":"-2,2102175"
+  ,"longitude":"119,3151656"
+  },
+  {
+    "Town":" Maluku"
+  ,"latitude":"-3,755207"
+  ,"longitude":"128,9492764"
+  },
+  {
+    "Town":" Maluku Utara"
+  ,"latitude":"0,389185"
+  ,"longitude":"127,999141"
+  },
+  {
+    "Town":" Papua Barat"
+  ,"latitude":"-1,624323"
+  ,"longitude":"132,2789801"
+  },
+  {
+    "Town":" Papua"
+  ,"latitude":"-4,8740403"
+  ,"longitude":"137,8090696"
+  }]
