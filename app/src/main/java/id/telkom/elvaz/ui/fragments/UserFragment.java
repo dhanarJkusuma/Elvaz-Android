@@ -2,9 +2,12 @@ package id.telkom.elvaz.ui.fragments;
 
 
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,8 +20,10 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import id.telkom.elvaz.R;
 import id.telkom.elvaz.model.EarthStationInformation;
+import id.telkom.elvaz.model.LookAngle;
 import id.telkom.elvaz.model.SateliteInformation;
 import id.telkom.elvaz.presenter.UserPresenter;
+import id.telkom.elvaz.ui.activity.BluetoothListActivity;
 import id.telkom.elvaz.ui.ui_interface.IUserView;
 import id.telkom.elvaz.util.Validation;
 
@@ -62,7 +67,9 @@ public class UserFragment extends Fragment implements IUserView, View.OnClickLis
     Button bSearchLocation;
     @Bind(R.id.bSelectSatelite)
     Button bSelectSatelite;
-
+    @Bind(R.id.bLocate)
+    Button bLocate;
+    private LookAngle lookAngle;
     private UserPresenter presenter;
 
     public UserFragment()
@@ -81,6 +88,7 @@ public class UserFragment extends Fragment implements IUserView, View.OnClickLis
         bCalculate.setOnClickListener(this);
         bSearchLocation.setOnClickListener(this);
         bSelectSatelite.setOnClickListener(this);
+        bLocate.setOnClickListener(this);
         leaveFocusListener();
         return rootView;
     }
@@ -103,7 +111,7 @@ public class UserFragment extends Fragment implements IUserView, View.OnClickLis
         satelite.setSateliteName(iSateliteName.getText().toString());
         satelite.setLongitude(Double.parseDouble(Validation.parseComa(iSateliteLongitude.getText().toString())));
 
-        presenter.getLookAngle(earth, satelite);
+        lookAngle = presenter.getLookAngle(earth, satelite);
 
 
     }
@@ -134,9 +142,77 @@ public class UserFragment extends Fragment implements IUserView, View.OnClickLis
             case R.id.bSelectSatelite:
                 presenter.getDialogSatelitList();
                 break;
+            case R.id.bLocate:
+                AlertDialog.Builder alertChoice = new AlertDialog.Builder(getContext());
+                alertChoice.setTitle("Pointing");
+                if(lookAngle!=null)
+                {
+                    alertChoice.setMessage(
+                            "Choose your pointing method : \n current site  \n(" + iSiteName.getText().toString() + ") "
+                    );
+                }
+                else
+                {
+                    alertChoice.setMessage(
+                            "Choose your pointing method"
+                    );
+                }
+
+                alertChoice.setPositiveButton("Automatic", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //Otomatis
+                        if(lookAngle!=null)
+                        {
+                            Intent pointPage = new Intent(getContext(), BluetoothListActivity.class);
+                            pointPage.putExtra("lookAngle",lookAngle);
+                            pointPage.putExtra("isManual",false);
+                            startActivity(pointPage);
+                        }
+                        else
+                        {
+                            showMessage("Azimuth and Elevation not defined. Please fill the form above and calculate.");
+                        }
+
+                    }
+                });
+                alertChoice.setNegativeButton("Close", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //Tidak
+                        dialog.dismiss();
+                    }
+                });
+                alertChoice.setNeutralButton("Manual", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //Manual gan
+                        Intent pointPage = new Intent(getContext(), BluetoothListActivity.class);
+                        pointPage.putExtra("isManual",true);
+                        startActivity(pointPage);
+                    }
+                });
+                alertChoice.show();
+
 
         }
     }
+
+    public void showMessage(String message)
+    {
+        AlertDialog.Builder messageAlert = new AlertDialog.Builder(getContext());
+        messageAlert
+                .setMessage(message)
+                .setPositiveButton("Close", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                })
+                .show();
+    }
+
+
 
     @Override
     public void onFocusChange(View v, boolean hasFocus)
@@ -152,6 +228,7 @@ public class UserFragment extends Fragment implements IUserView, View.OnClickLis
             case R.id.iSateliteLongitude :
                 if(!hasFocus)Validation.NormalTextValidation(iSateliteLongitude,"Satelite Longitude",lSateliteLongitude);
                 break;
+
         }
     }
 

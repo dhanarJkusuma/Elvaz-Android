@@ -43,13 +43,13 @@ public class UserPresenter
         return satelites;
     }
 
-    public void getLookAngle(EarthStationInformation earth,SateliteInformation satelite)
+    public LookAngle getLookAngle(EarthStationInformation earth,SateliteInformation satelite)
     {
         LookAngle lookAngle = Calculate.getLookAngle(earth, satelite);
         iUser.setAzimuth("Azimuth : " + String.valueOf(lookAngle.getAzimuth()));
         iUser.setElevation("Elevation : " + String.valueOf(lookAngle.getElevation()));
         iUser.setPolarization("Polarization : " + String.valueOf(lookAngle.getPolarization()));
-
+        return lookAngle;
     }
 
     public void getDialogEarthList()

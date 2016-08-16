@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
     package="id.telkom.elvaz">
+
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:supportsRtl="true"
+        android:icon="@mipmap/ic_launcher_elvaz"
+        android:label="ELVAZ"
         android:theme="@style/Base.MyThemeForm">
         <activity android:name=".ui.activity.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".ui.activity.LocationActivity"
@@ -23,6 +25,24 @@
             android:name=".ui.activity.SettingActivity"
             android:label="@string/title_activity_setting"
             android:theme="@style/Base.MyThemeForm" />
+        <activity
+            android:name=".ui.activity.BluetoothListActivity"
+            android:label="@string/title_activity_bluetooth_list"
+            android:theme="@style/Base.MyThemeForm" />
+        <activity
+            android:name=".ui.activity.RotateActivity"
+            android:label="@string/title_activity_rotate"
+            android:theme="@style/Base.MyThemeForm" />
+        <activity
+            android:name=".ui.activity.SplashScreenActivity"
+            android:theme="@style/Base.MyThemeForm">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+
+        </activity>
     </application>
 
 </manifest>

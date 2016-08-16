@@ -8,4 +8,6 @@
     <color name="blue_900">#01579b</color>
     <color name="A_700">#0091ea</color>
     <color name="white">#FFFFFF</color>
+
+    <color name="black_overlay">#66000000</color>
 </resources>

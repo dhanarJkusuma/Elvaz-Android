@@ -5,4 +5,9 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_location">LocationActivity</string>
     <string name="title_activity_setting">SettingActivity</string>
+    <string name="title_activity_bluetooth_list">BluetoothListActivity</string>
+    <string name="title_activity_rotate">RotateActivity</string>
+
+    <string name="title_activity_splash_screen">SplashScreenActivity</string>
+
 </resources>
